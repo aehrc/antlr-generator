@@ -1,0 +1,22 @@
+{
+  "name": "antlr-generator",
+  "version": "1.0.0",
+  "description": "antlr web",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run cymbol",
+    "cymbol": "http-server antlr-web",
+    "build-cymbol": "antlr4 -Dlanguage=JavaScript antlr-web/Cymbol.g4 -o antlr-web/parser",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aehrc/antlr-generator.git"
+  },
+  "author": "Ngoc Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aehrc/antlr-generator/issues"
+  },
+  "homepage": "https://github.com/aehrc/antlr-generator#readme"
+}
