@@ -25,12 +25,12 @@ ace.define('ace/worker/my-worker',["require","exports","module","ace/lib/oop","a
   window.require = require = ace_require;
 
   // load antlr4 and myLanguage
-  var antlr4, CymbolLexer, CymbolParser;
+  var antlr4, FhircapGrammarLexer, FhircapGrammarParser;
   try {
     window.require = antlr4_require;
     antlr4 = antlr4_require('antlr4/index');
-    CymbolLexer = antlr4_require('parser/CymbolLexer').CymbolLexer;
-    CymbolParser = antlr4_require('parser/CymbolParser').CymbolParser;
+    FhircapGrammarLexer = antlr4_require('parser/FhircapLexer').FhircapLexer;
+    FhircapGrammarParser = antlr4_require('parser/FhircapGrammar').FhircapGrammar;
   } finally {
     window.require = ace_require;
   }
@@ -56,14 +56,15 @@ ace.define('ace/worker/my-worker',["require","exports","module","ace/lib/oop","a
 
   function validate(input) {
     var stream = new antlr4.InputStream(input);
-    var lexer = new CymbolLexer(stream);
+    var lexer = new FhircapGrammarLexer(stream);
     var tokens = new antlr4.CommonTokenStream(lexer);
-    var parser = new CymbolParser(tokens);
+    var parser = new FhircapGrammarParser(tokens);
     var annotations = [];
     var listener = new AnnotatingErrorListener(annotations);
     parser.removeErrorListeners();
     parser.addErrorListener(listener);
-    parser.file();
+    //parser.file();
+    parser.document();
     return annotations;
   }
 

@@ -4,9 +4,9 @@
   "description": "antlr web",
   "main": "index.js",
   "scripts": {
-    "start": "npm run cymbol",
-    "cymbol": "http-server antlr-web",
-    "build-cymbol": "antlr4 -Dlanguage=JavaScript antlr-web/Cymbol.g4 -o antlr-web/parser",
+    "start": "npm run fhircap",
+    "fhircap": "http-server antlr-web",
+    "build-fhircap": "antlr4 -Dlanguage=JavaScript antlr-web/parser/FhircapLexer.g4 -o antlr-web/parser && antlr4 -Dlanguage=JavaScript antlr-web/parser/FhircapGrammar.g4 -o antlr-web/parser",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/aehrc/antlr-generator/issues"
   },
-  "homepage": "https://github.com/aehrc/antlr-generator#readme"
+  "homepage": "https://github.com/aehrc/antlr-generator#readme",
+  "dependencies": {
+    "antlr4-autosuggest": "0.0.28",
+    "http-server": "^0.11.1"
+  }
 }
