@@ -19,13 +19,13 @@ var staticWordCompleter = {
     getCompletions: function(editor, session, pos, prefix, callback) {
         let text = originalText = editor.getSession().getDocument().$lines[pos.row].substr(0, pos.column);
 
-        if (originalText.includes("->")) {
-            let arr1 = originalText.split('->');
-            if (arr1[1].includes(",")) {
-                let arr2 = arr1[1].split(',');
-                text = arr1[0] + '->' + arr2[arr2.length - 1];
-            }     
-        }
+        // if (originalText.includes("->")) {
+        //     let arr1 = originalText.split('->');
+        //     if (arr1[1].includes(",")) {
+        //         let arr2 = arr1[1].split(',');
+        //         text = arr1[0] + '->' + arr2[arr2.length - 1];
+        //     }     
+        // }
 
 
         let suggestions = autosuggester.autosuggest(text);  
