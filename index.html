@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web editor created with ANTLR4 and ACE</title>
+  <link rel="stylesheet" href="index.css">
+
+  <script src="require.js"></script>
+  <script type="application/javascript">
+    var antlr4 = require('antlr4/index');
+    var antlr4_require = require;
+  </script>
+  <script src="bower_components/ace-builds/src-noconflict/ace.js"></script>
+  <script src="bower_components/ace-builds/src-noconflict/ext-language_tools.js"></script>
+  <script>
+    ace.define('antlr4/index', function (require, exports, module) {
+      module.exports = antlr4;
+    });
+  </script>
+  <script src="ace-config.js"></script>
+  <script src="bower_components/antlr4-ace-ext/src/token-type-map.js"></script>
+  <script src="bower_components/antlr4-ace-ext/src/tokenizer.js"></script>
+</head>
+<body>
+  <div id="editor"></div>
+
+  <script src="index.js"></script>
+</body>
+</html>
