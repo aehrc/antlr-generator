@@ -4,9 +4,9 @@
   "description": "antlr web",
   "main": "index.js",
   "scripts": {
-    "start": "npm run fhircap",
-    "fhircap": "http-server",
-    "build-fhircap": "antlr4 -Dlanguage=JavaScript parser/MyLexer.g4 -o parser/ && antlr4 -Dlanguage=JavaScript parser/MyGrammar.g4 -o parser/",
+    "start": "npm run antlr-generator",
+    "antlr-generator": "http-server antlr-web",
+    "build-fhircap": "antlr4 -Dlanguage=JavaScript antlr-web/parser/MyLexer.g4 -o antlr-web/parser/ && antlr4 -Dlanguage=JavaScript antlr-web/parser/MyGrammar.g4 -o antlr-web/parser/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
